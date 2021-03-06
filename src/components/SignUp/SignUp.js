@@ -50,7 +50,7 @@ handleSubmit = (event) => {
 };
 
 redirect = () => {
-  this.setState({redirect: "/welcome"});
+  this.setState({redirect: "/home"});
 };
 
 
@@ -74,49 +74,59 @@ render() {
     return <Redirect to={this.state.redirect} />
   }
   return (
-      <div className='card text-center shadow'>
+    <div className="container">
+      <div className="container-fluid" >
           <h1>Sign Up</h1>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              placeholder="username"
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="email"
-              type="text"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-            <input 
-              placeholder="password"
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-            <input
-              placeholder="password confirmation"
-              type="password"
-              name="password_confirmation"
-              value={password_confirmation}
-              onChange={this.handleChange}
-            />
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <input
+                  placeholder="username"
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  placeholder="email"
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <input 
+                  placeholder="password"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  placeholder="confirm password"
+                  type="password"
+                  name="password_confirmation"
+                  value={password_confirmation}
+                  onChange={this.handleChange}
+                />
+              </div>
+            
+              <button placeholder="submit" type="submit">
+                Sign Up
+              </button>
           
-            <button placeholder="submit" type="submit">
-              Sign Up
-            </button>
-        
-          </form>
-          <div>
-            {
-              this.state.errors ? this.handleErrors() : null
-            }
-          </div>
+            </form>
+            <div>
+              {
+                this.state.errors ? this.handleErrors() : null
+              }
+            </div>
         </div>
+      </div>
       );
   }
 }

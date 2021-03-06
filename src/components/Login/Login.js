@@ -72,7 +72,8 @@ class Login extends Component {
       const {username, email, password} = this.state
 
       return (
-            <div className='card text-center shadow'>
+        <div className="container">
+            <div className="container-fluid" >
               <h1>Log In</h1>
               <form onSubmit={this.handleSubmit}>
               <div className="form-group">
@@ -103,7 +104,7 @@ class Login extends Component {
                 />
               </div>
               <div>
-                <button className="btn btn-outline-success" placeholder="submit" type="submit">
+                <button  placeholder="submit" type="submit">
                   Log In
                 </button>
               </div>
@@ -119,6 +120,7 @@ class Login extends Component {
                 }
               </div>
             </div>
+        </div>
           );
     }
 }

@@ -2,8 +2,9 @@ import React from 'react';
 
 const Welcome = () => {
   return (
-    <div card text-center shadow>
+    <div className="container-fluid">
       <p>Successfully Have Signed in!</p>
+      {/* will build button for signout */}
     </div>
   );
 };
