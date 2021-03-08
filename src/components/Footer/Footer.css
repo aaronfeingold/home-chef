@@ -1,9 +1,11 @@
 .footer-container {
   margin-top: 1rem;
-  padding: 1rem;
+  position: absolute;
+  padding-bottom: 60px;
   background-color: #f5be09;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
 }
 

@@ -41,7 +41,7 @@ export class Navbar extends Component {
           </div>
           <ul className={this.state.click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <NavLink to='/home' className='nav-links' onClick={this.closeMobileMenu}>
+              <NavLink to='/' className='nav-links' onClick={this.closeMobileMenu}>
                 Home
               </NavLink>
             </li>

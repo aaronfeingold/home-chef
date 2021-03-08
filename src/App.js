@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux'
 import Navbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
 import SignUp from './components/SignUp/SignUp.js'
@@ -37,7 +38,6 @@ class App extends Component {
   };
 
   handleLogin = (data) => {
-    debugger;
     this.setState({
       isLoggedIn: true,
       user: data.user
@@ -54,11 +54,11 @@ class App extends Component {
     render() {
       return (
         <Router >
-          <Navbar isLoggedin={this.state.isLoggedIn}/>
+          <Navbar isLoggedIn={this.state.isLoggedIn}/>
             <Switch>
-              <Route exact path='/home'component={Home}/>
-              <Route exact path='/login'  component={Login}/>
+              <Route exact path='/'render={props => (<Home {...props} handleLogout={this.handleLogout} isLoggedIn={this.state.isLoggedIn}/>)} />
               <Route exact path='/signup' render={ props => (<SignUp {...props} handleLogin={this.handleLogin}/>)} />
+              <Route exact path='/login'  component={Login}/>
             </Switch>
           <Footer />
         </Router> 

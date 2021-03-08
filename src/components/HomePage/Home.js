@@ -1,14 +1,23 @@
-import React from 'react';
-import Carousel from './Carousel'
-import Welcome from './Welcome';
+import React, {Component} from 'react';
 
-const Home = (props) => {
-  return (
-    <div className="container">
-      <Welcome />
-      <Carousel />
 
-    </div>
-  );
+class Home extends Component {
+
+  render(){
+    let message
+
+    if (this.props.isLoggedIn === true){
+      message =  "You are logged in" 
+    } else {
+      message = "Please login"
+    }
+
+    return (
+      <div className="container-fluid">
+        <h3>Hello!</h3>
+        <p>{message}</p>
+      </div>
+    );
+  }
 };
 export default Home;

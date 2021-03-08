@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Welcome = () => {
+const Welcome = (props) => {
+
+  
+
   return (
     <div className="container-fluid">
-      <p>Successfully Have Signed in!</p>
+      <h3>Hello, {props.user}!</h3>
+      <p>You successfully Have Signed in!</p>
       {/* will build button for signout */}
     </div>
-  );
+  )
 };
 export default Welcome;

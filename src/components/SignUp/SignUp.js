@@ -50,7 +50,7 @@ handleSubmit = (event) => {
 };
 
 redirect = () => {
-  this.setState({redirect: "/home"});
+  this.setState({redirect: "/"});
 };
 
 
