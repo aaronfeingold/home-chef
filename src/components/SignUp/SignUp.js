@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux'
+import { handleSignUp } from '../../actions/usersActions.js'
 import axios from 'axios'
 const BASE_URL = "http://127.0.0.1:3001/api/v1"
 
@@ -35,25 +37,13 @@ handleSubmit = (event) => {
     password_confirmation: password_confirmation
   }
 
-  axios.post(BASE_URL +'/users', {user})
-    .then(response => {
-      if (response.data.status === 'created') {
-        this.props.handleLogin(response.data)
-        this.redirect()
-      } else {
-        this.setState({
-          errors: response.data.errors
-        })
-      }
-    })
-    .catch(error => console.log('api errors:', error))
+  this.props.handleSignUp(user)
+  this.redirect();
 };
 
 redirect = () => {
-  this.setState({redirect: "/"});
-};
-
-
+  this.props.history.push('/')
+}
 
 handleErrors = () => {
   return (
@@ -130,4 +120,6 @@ render() {
       );
   }
 }
-export default Signup;
+
+
+export default connect(handleSignUp) (Signup);

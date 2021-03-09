@@ -1,23 +1,24 @@
-import React, {Component} from 'react';
-
+import React, { Component }from 'react';
+import { connect } from 'react-redux'
+import Welcome from './Welcome.js'
 
 class Home extends Component {
 
-  render(){
-    let message
-
-    if (this.props.isLoggedIn === true){
-      message =  "You are logged in" 
-    } else {
-      message = "Please login"
-    }
-
-    return (
-      <div className="container-fluid">
-        <h3>Hello!</h3>
-        <p>{message}</p>
+  render() {
+    return(
+      <div>
+        <Welcome isLoggedIn={this.props.isLoggedIn}/>
       </div>
-    );
+    )
+  } 
+  
+}
+
+const mapStateToProps = state => {
+  return {
+      isLoggedIn: state.usersReducer.isLoggedIn
   }
-};
-export default Home;
+}
+
+export default connect(mapStateToProps) (Home)
+// export default Home

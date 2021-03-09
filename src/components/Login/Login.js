@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { handleLogIn } from '../../actions/usersActions.js'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
@@ -38,7 +40,7 @@ class Login extends Component {
       axios.post(BASE_URL +'/login', {user}, {withCredentials: true})
       .then(response => {
         if (response.data.logged_in) {
-          this.props.handleLogin(response.data)
+          this.props.handleLogIn(response.data)
           this.redirect()
         } else {
           this.setState({
@@ -124,4 +126,6 @@ class Login extends Component {
           );
     }
 }
-export default Login;
+
+
+export default connect(null, handleLogIn )(Login);
