@@ -18,6 +18,7 @@ const logOut = () => {
 }
 
 export function loginStatus() {
+  debugger;
   return async function(dispatch) {
     try {
       const response = await axios.get(BASE_URL + '/logged_in');
@@ -69,30 +70,9 @@ export function loginStatus() {
     }
   }
 
+  
 
 
 
 
 
-
-
-
-
-//   axios.post(BASE_URL +'/users', {user})
-//   .then(response => {
-//     if (response.data.status === 'created') {
-//       debugger;
-//       this.props.createUserSession(response.data)
-//       this.redirect()
-//     } else {
-//       this.setState({
-//         errors: response.data.errors
-//       })
-//     }
-//   })
-//   .catch(error => console.log('api errors:', error))
-// };
-
-// redirect = () => {
-// this.setState({redirect: "/"});
-// };

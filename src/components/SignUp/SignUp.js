@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux'
 import { handleSignUp } from '../../actions/usersActions.js'
-import axios from 'axios'
-const BASE_URL = "http://127.0.0.1:3001/api/v1"
 
 class Signup extends Component {
   
@@ -122,4 +120,4 @@ render() {
 }
 
 
-export default connect(handleSignUp) (Signup);
+export default connect(null, { handleSignUp })(Signup);

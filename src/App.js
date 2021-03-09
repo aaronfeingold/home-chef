@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer.js'
 import SignUp from './components/SignUp/SignUp.js'
 import Login from './components/Login/Login.js'
 import Home from './components/HomePage/Home.js'
-import { loginStatus } from './actions/usersActions.js'
+import { dummyMount } from './actions/dummyActions.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.loginStatus()
+    this.props.dummyMount();
   }
 
     render() {
@@ -34,4 +34,4 @@ class App extends Component {
     } 
 }
 
-export default connect(null, { loginStatus })(App);
+export default connect(null, { dummyMount })(App);
